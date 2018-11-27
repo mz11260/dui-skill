@@ -137,23 +137,23 @@ public class ResponseBuilder {
      */
     private Response.Speak speak;
     /**
-     * 卡片内容控件
+     * 卡片内容控件，控件之间互斥，即同时只能设置一种控件
      */
     private CardWidget card;
     /**
-     * 文本控件
+     * 文本控件，控件之间互斥，即同时只能设置一种控件
      */
     private TextWidget text;
     /**
-     * 网页控件
+     * 网页控件，控件之间互斥，即同时只能设置一种控件
      */
     private WebWidget web;
     /**
-     * list控件
+     * list控件，控件之间互斥，即同时只能设置一种控件
      */
     private ListOrMediaWidget list;
     /**
-     * 媒体内容播放控件
+     * 媒体内容播放控件，控件之间互斥，即同时只能设置一种控件
      */
     private ListOrMediaWidget media;
 
