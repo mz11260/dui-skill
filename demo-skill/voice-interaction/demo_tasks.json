@@ -1,0 +1,171 @@
+{
+  "tasks": [
+    {
+      "slots": [
+        {
+          "name": "sys.页码",
+          "lexicons": []
+        },
+        {
+          "name": "sys.序列号",
+          "lexicons": []
+        },
+        {
+          "name": "SHORT",
+          "lexicons": [
+            "shortSentences"
+          ]
+        },
+        {
+          "name": "NAME",
+          "lexicons": [
+            "songName"
+          ]
+        }
+      ],
+      "name": "play",
+      "intents": [
+        {
+          "slots": [
+            {
+              "required": false,
+              "prompt": [
+                "你想听啥歌呢？"
+              ],
+              "name": "NAME"
+            },
+            {
+              "required": false,
+              "prompt": [
+                "你想听啥歌呢？"
+              ],
+              "name": "SHORT"
+            }
+          ],
+          "type": "semantic",
+          "name": "playSong",
+          "utterances": [
+            {
+              "sentence": "{SHORT}{NAME}",
+              "pattern": true,
+              "naSlots": [],
+              "refSlots": [],
+              "taskClassify": 1,
+              "slots": [
+                {
+                  "name": "SHORT",
+                  "value": "{SHORT}",
+                  "pos": [
+                    0,
+                    6
+                  ]
+                },
+                {
+                  "name": "NAME",
+                  "value": "{NAME}",
+                  "pos": [
+                    7,
+                    12
+                  ]
+                }
+              ]
+            }
+          ],
+          "error": {
+            "asrEmpty": {
+              "errType": "default",
+              "errMsg": [
+                "我听不懂你说什么，可以换个说法吗"
+              ]
+            },
+            "nluEmpty": {
+              "errType": "default",
+              "errMsg": [
+                "我听不懂你说什么，可以换个说法吗"
+              ]
+            }
+          }
+        },
+        {
+          "slots": [],
+          "type": "semantic",
+          "name": "next",
+          "utterances": [
+            {
+              "sentence": "下一首",
+              "pattern": false,
+              "naSlots": [],
+              "refSlots": [],
+              "taskClassify": 1,
+              "slots": []
+            }
+          ],
+          "error": {
+            "asrEmpty": {
+              "errType": "default",
+              "errMsg": [
+                "我听不懂你说什么，可以换个说法吗"
+              ]
+            },
+            "nluEmpty": {
+              "errType": "default",
+              "errMsg": [
+                "我听不懂你说什么，可以换个说法吗"
+              ]
+            }
+          }
+        },
+        {
+          "slots": [],
+          "type": "semantic",
+          "name": "previous",
+          "utterances": [
+            {
+              "sentence": "上一首",
+              "pattern": false,
+              "naSlots": [],
+              "refSlots": [],
+              "taskClassify": 1,
+              "slots": []
+            }
+          ],
+          "error": {
+            "asrEmpty": {
+              "errType": "default",
+              "errMsg": [
+                "我听不懂你说什么，可以换个说法吗"
+              ]
+            },
+            "nluEmpty": {
+              "errType": "default",
+              "errMsg": [
+                "我听不懂你说什么，可以换个说法吗"
+              ]
+            }
+          }
+        },
+        {
+          "slots": [],
+          "type": "semantic",
+          "name": "exit",
+          "utterances": [],
+          "error": {
+            "asrEmpty": {
+              "errType": "default",
+              "errMsg": [
+                "我听不懂你说什么，可以换个说法吗"
+              ]
+            },
+            "nluEmpty": {
+              "errType": "default",
+              "errMsg": [
+                "我听不懂你说什么，可以换个说法吗"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "lexicons": []
+}

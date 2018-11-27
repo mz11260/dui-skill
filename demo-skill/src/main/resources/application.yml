@@ -1,0 +1,32 @@
+spring:
+  profiles:
+#    active: @profileActive@ # 指定配置，打包的时候加-P pro参数，右键运行会报错，要用maven编译运行 spring-boot:run
+    active: dev # 打包的时候要手动修改profile为pro
+  application:
+      name: demo-skill # 服务名称
+#  jackson:
+#    default-property-inclusion: non_null #null值不输出
+
+
+########### SERVER ###########
+server:
+  #  http:
+  #    port: 8012 # http端口
+  port: 9442   # https端口
+  context-path: / #访问路径
+  tomcat:
+    uri-encoding: utf-8
+
+
+---
+spring:
+  profiles: por
+logging:
+  config: file:${user.dir}/config/pro-logback.xml
+
+---
+spring:
+  profiles: dev
+logging:
+  #config: classpath:dev-logback.xml
+  level.com.zm.skill.dao: debug # show sql
