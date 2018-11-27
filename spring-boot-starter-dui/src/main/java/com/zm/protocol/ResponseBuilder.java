@@ -372,6 +372,10 @@ public class ResponseBuilder {
             response.getResponse().setWidget(list);
         }
 
+        response.setShouldEndSession(this.shouldEndSession);
+        response.setConfidence(this.confidence);
+        response.setYield(this.yield);
+
         return response;
     }
 
@@ -406,9 +410,9 @@ public class ResponseBuilder {
         }
         skillResponse.setResponse(response);
 
-        skillResponse.setShouldEndSession(this.shouldEndSession);
+        /*skillResponse.setShouldEndSession(this.shouldEndSession);
         skillResponse.setConfidence(this.confidence);
-        skillResponse.setYield(this.yield);
+        skillResponse.setYield(this.yield);*/
 
         return skillResponse;
     }
