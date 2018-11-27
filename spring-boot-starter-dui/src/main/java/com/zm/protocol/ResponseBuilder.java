@@ -56,6 +56,20 @@ public class ResponseBuilder {
         }
     }
 
+    /**
+     * 退出应用
+     *
+     * @return SkillResponse
+     */
+    public static final SkillResponse exit(String tts) throws ProtocolException {
+        try {
+            return ResponseBuilder.build().speakText(tts).afterFinish().create();
+        } catch (ProtocolException e) {
+            log.error("builder response error", e);
+            throw e;
+        }
+    }
+
     public static final SkillResponse playSpeakAndMedia(Response.Speak speak, ListOrMediaWidget media) throws ProtocolException {
         try {
             media.setType(WidgetType.media);

@@ -89,7 +89,7 @@ public class DemoSkillIntentDispatcher {
         DataCache.cached.invalidate(request.getSession().getSessionId() + DataCache.INDEX_KEY);
         DataCache.cached.invalidate(request.getSession().getSessionId() + DataCache.LIST_KEY);
 
-        return ResponseBuilder.playSpeak("谢谢使用，再见！");
+        return ResponseBuilder.exit("谢谢使用，再见！");
     }
 
     private String getKeyword(SkillRequest request) {

@@ -46,7 +46,7 @@ public class DemoSkillRequestDispatcherImpl implements SkillRequestDispatcher {
         DataCache.cached.invalidate(request.getSession().getSessionId() + DataCache.INDEX_KEY);
         DataCache.cached.invalidate(request.getSession().getSessionId() + DataCache.LIST_KEY);
 
-        return ResponseBuilder.playSpeak("再见");
+        return ResponseBuilder.exit("再见");
     }
 
     @Override
