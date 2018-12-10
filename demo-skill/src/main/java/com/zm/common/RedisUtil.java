@@ -5,6 +5,8 @@ import com.alibaba.fastjson.TypeReference;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.connection.RedisConnectionCommands;
+import org.springframework.data.redis.connection.RedisServerCommands;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -182,13 +184,7 @@ public class RedisUtil {
 	 * @return string 服务器收到后返回pong
 	 */
 	public String ping() {
-		return redisTemplate.execute(new RedisCallback<String>() {
-			public String doInRedis(RedisConnection connection)
-					throws DataAccessException {
-
-				return connection.ping();
-			}
-		});
+		return redisTemplate.execute(RedisConnectionCommands::ping);
 	}
 
 	/**
@@ -197,12 +193,7 @@ public class RedisUtil {
 	 * @return long
 	 */
 	public long dbSize() {
-		return redisTemplate.execute(new RedisCallback<Long>() {
-			public Long doInRedis(RedisConnection connection)
-					throws DataAccessException {
-				return connection.dbSize();
-			}
-		});
+		return redisTemplate.execute(RedisServerCommands::dbSize);
 	}
 
 	/**
